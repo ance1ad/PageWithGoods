@@ -36,22 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		if (products[i].price == products[i].pPrice) {
 			itemsPrice[i].innerHTML = products[i].price + " ₽ / м²";
 		} else {
-			itemsPrice[i].innerHTML = products[i].price + " ₽ / м² <del style=\"color:grey;\">" + products[i].pPrice + "</del>";
+			itemsPrice[i].innerHTML = products[i].price + " ₽ <del style=\"color:rgba(0, 0, 0, 0.3);\">  " + products[i].pPrice + "</del> / м²";
 		}
 	}
-	// Цвет кружков
-	circlesColor = 'black';
-
-	circle1 = document.querySelectorAll(".catalogItemCircles div:nth-child(1)");
-	circle2 = document.querySelectorAll(".catalogItemCircles div:nth-child(2)");
-
-	circle1.forEach((e) => {
-		e.style.border = `2px solid ${circlesColor}`;
-		e.style.backgroundColor = `${circlesColor}`;
-	});
-	circle2.forEach((e) => {
-		e.style.border = `2px solid ${circlesColor}`;
-	});
 	//Кнопки сортировки
 	const allSorts = document.querySelectorAll(".sortItem");
 
@@ -143,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
-	const sortChooseBlockButton = document.querySelector("#sortChooseBlock > a"); //Кнопка применить
+	const sortChooseBlockButton = document.querySelector("#sortChooseBlock > .buy-button"); //Кнопка применить
 	sortChooseBlockButton.addEventListener('click', () => {
 		let selectedItems = [];
 		if (sortVar != -1) {
@@ -228,7 +215,7 @@ function fillCatalog(selectedItems) {
 		} else {
 			inHTML += `<p>${e.price}₽ / м²</p>`;
 		}
-		inHTML += `<a>Купить</a>
+		inHTML += `<button class="buy-button">Купить</button>
                    </div>
                  </div>`;
 	});

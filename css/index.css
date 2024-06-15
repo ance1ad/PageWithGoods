@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 * {
-	font-family: "Roboto", sans-serif;
-	font-weight: 400;
+	font-family: "Manrope", sans-serif;
 	font-style: normal;
 }
 
@@ -57,13 +56,13 @@ body {
 }
 
 #textContainer {
-	width: 1080px;
+	width: 1280px;
 	display: flex;
 	justify-content: space-between;
 }
 
 #textContainer>h1 {
-	margin-left: 2.5rem;
+	margin-left: 1rem;
 }
 
 #textContainer>div {
@@ -78,9 +77,8 @@ body {
 #textContainer>div>img {
 	position: relative;
 	top: .4rem;
-	right: .2rem;
-	width: 1.4rem;
-	height: 1.4rem;
+	right: 10px;
+	padding: 1.5px 0;
 }
 
 #catalog {
@@ -101,7 +99,6 @@ body {
 	width: 30%;
 	flex-grow: 0;
 	margin: 1rem;
-	border-radius: 1.9rem;
 	display: flex;
 	flex-direction: column;
 }
@@ -126,86 +123,102 @@ body {
 .newImg {
 	width: 2rem;
 	height: 2rem;
-	margin-left: 0.5rem;
+	margin-left: 1rem;
 }
 
 .catalogImg {
 	width: 100%;
-	border-radius: 1.9rem 1.9rem 0 0;
+	border-radius: 15px 15px 0px 0px;
 	/* Закругляем только верхние углы */
 }
 
-.catalogInfo {
-	padding: 1rem;
-}
-
-.catalogItemCircles {
-	display: flex;
-}
-
-.catalogItemCircles>div {
-	width: 1rem;
-	height: 1rem;
-	background-color: grey;
-	border-radius: 50%;
-	margin-right: 0.5rem;
-}
+/* ----------------------- */
 
 
 .catalogItemCircles {
-	top: -15px;
+	top: -40px;
 	display: flex;
 	left: 44%;
 	position: relative;
 	width: fit-content;
+	height: 0px;
+	margin-top: 0px;
 }
 
 .catalogItemCircles>div {
-	margin: 0 .2rem;
-	width: .5rem;
-	height: .5rem;
-	border: 2px solid black;
+	width: 12px;
+	height: 12px;
 	border-radius: 2.5rem;
+	box-sizing: border-box;
 }
 
 .catalogItemCircles div:nth-child(1) {
-	background-color: black;
+	background-color: white;
+	margin-right: 10px;
+
 }
 
-.catalogImg {
-	width: 100%;
+.catalogItemCircles div:nth-child(2) {
+	border: 2px solid white;
+	margin-left: 10px;
+
 }
+
+
+/* ................ */
+
 
 .catalogInfo {
-	background-color: #F4F4F6;
+	background: rgb(244, 244, 246);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 70%;
+	border-radius: 0px 0px 15px 15px;
+
 }
 
 .catalogInfo p:nth-child(2) {
 	position: relative;
-	top: -0.3rem;
-	margin-left: 1rem;
-	font-size: 1.3rem;
-	white-space: wrap;
+	color: rgb(0, 0, 0);
+	font-family: Manrope;
+	font-size: 21px;
+	font-weight: 500;
+	line-height: 130%;
+	letter-spacing: 0px;
+	text-align: left;
+	text-transform: uppercase;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 16px;
+	margin-bottom: 10px;
+
 }
 
 .catalogInfo p:nth-child(3) {
-	position: relative;
-	top: -0.9rem;
-	font-size: 1rem;
-	align-self: flex-end;
-	margin-right: 1rem;
+	color: rgba(0, 0, 0, 0.5);
+	font-family: Manrope;
+	font-size: 18px;
+	line-height: 130%;
+	letter-spacing: 0px;
+	text-align: right;
+	margin-right: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .catalogInfo p:nth-child(4) {
+	color: rgb(0, 0, 0);
+	font-family: Manrope;
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 130%;
+	letter-spacing: 0px;
+	text-align: right;
 	position: relative;
-	top: -1.5rem;
-	font-size: 1.4rem;
-	align-self: flex-end;
-	margin-right: 1rem;
+	margin-top: 4px;
+	margin-right: 15px;
+	margin-bottom: 0px;
+
 }
 
 .catalogInfo a {
@@ -213,58 +226,73 @@ body {
 	border-radius: 1.8rem;
 	border: 1px solid black;
 	font-size: 1.4rem;
-	padding: .3rem 1rem;
-	width: 80%;
+	width: 100%;
 	text-align: center;
 	position: relative;
-	top: -1.7rem;
-	transition: .4s;
+
+
 	cursor: pointer;
-	margin-bottom: 0;
 }
 
-.catalogInfo a:hover {
+
+
+.buy-button {
+	padding: 15px 30px 16px 30px;
+	margin: 20px;
+	background-color: #ffffff;
+	color: #000000;
+	border: none;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	outline: none;
+	transition: .4s;
+	box-sizing: border-box;
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 50px;
+	font-family: Manrope;
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: 0px;
+	text-align: center;
+}
+
+
+.buy-button:hover {
 	background-color: black;
 	color: white;
 }
 
 
 #sortChooseBlock {
+	border-color: #000000;
 	z-index: 3;
-	background-color: white;
+	/* поменять */
 	position: absolute;
-	width: 14rem;
+	width: 305px;
 	display: none;
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 1.5rem;
 	text-align: center;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+	background: rgb(255, 255, 255);
+
 }
 
-.option {
-	cursor: pointer;
-	margin: 0;
-	position: relative;
-	left: 2rem;
-	width: fit-content;
-	display: flex;
-	align-items: baseline;
+#sortChooseBlock p {
+	color: rgb(0, 0, 0);
+	font-family: Manrope;
+	font-size: 21px;
+	font-weight: 400;
+	line-height: 130%;
+	letter-spacing: 0px;
+	margin-left: 24px;
 }
 
-.option div {
-	display: flex;
-	top: .7rem;
-	margin: 0 .7rem;
-	border: 2px solid black;
-	width: .7rem;
-	height: .7rem;
-	border-radius: 2.5rem;
-}
-
-.option p {
-	font-size: 1rem;
-}
 
 #sortChooseBlock a {
 	align-self: center;
@@ -281,6 +309,71 @@ body {
 	background-color: black;
 	color: white;
 }
+
+.option {
+	cursor: pointer;
+	margin: 0;
+	position: relative;
+	left: 32px;
+	width: fit-content;
+	display: flex;
+	align-items: baseline;
+}
+
+.option div {
+	display: flex;
+	top: .7rem;
+	border: 2px solid black;
+	width: .7rem;
+	height: .7rem;
+	border-radius: 2.5rem;
+}
+
+.option p {
+	font-size: 1rem;
+	margin-bottom: 24px;
+	margin-top: 0;
+}
+
+.choice_sorted_text {
+	padding: 28px 0px 20px 0px;
+}
+
+.choice_button {
+	margin-top: 0px;
+	padding: 13px 39px 14px 39px;
+	margin-left: 32;
+	margin-right: 32;
+	margin-bottom: 20px;
+}
+
+#sortChoose p {
+	/* Desctop/Text1NormalMed */
+	color: rgb(0, 0, 0);
+	font-family: Manrope;
+	font-size: 26px;
+	font-weight: 500;
+	line-height: 130%;
+	letter-spacing: 0px;
+	text-align: left;
+}
+
+
+
+
+#textContainer h1 {
+	color: rgb(0, 0, 0);
+	font-family: Manrope;
+	font-size: 46px;
+	font-weight: 500;
+	line-height: 130%;
+	letter-spacing: 0px;
+	text-align: left;
+	text-transform: uppercase;
+	margin-left: 30px;
+}
+
+
 
 @media all and (max-width: 1256px) {
 	#catalog {
@@ -302,7 +395,7 @@ body {
 	}
 
 	.catalogInfo p:nth-child(3) {
-		font-size: 0.75rem;
+		font-size: 1rem;
 	}
 
 	.catalogInfo p:nth-child(4) {
