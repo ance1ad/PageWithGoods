@@ -174,12 +174,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	rect = sortChoose.getBoundingClientRect();
 
 	sortChooseBlock.style.top = `${rect.bottom + 15}px`;
-	sortChooseBlock.style.left = `${rect.left - ((rect.right - rect.x) / 2)}px`;
+	sortChooseBlock.style.left = `${rect.left - ((rect.right - rect.x) / 2 - 30)}px`;
 
 	window.addEventListener('resize', () => {
 		rect = sortChoose.getBoundingClientRect();
 		sortChooseBlock.style.top = `${rect.bottom + 15}px`;
-		sortChooseBlock.style.left = `${rect.left - ((rect.right - rect.x) / 2)}px`;
+		sortChooseBlock.style.left = `${rect.left - ((rect.right - rect.x) / 2 - 30)}px`;
 	});
 });
 //Возрват отстортированных элементов

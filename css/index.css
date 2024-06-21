@@ -3,10 +3,13 @@
 * {
 	font-family: "Manrope", sans-serif;
 	font-style: normal;
+	box-sizing: border-box;
 }
 
 body {
 	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
 }
 
 #sort {
@@ -21,17 +24,19 @@ body {
 }
 
 .sortItem {
-	margin: .5rem .4rem;
+	margin-top: 0.5rem;
+	margin-left: 0.4rem;
+	margin-right: 0.4rem;
 	cursor: pointer;
 	font-size: 1.2rem;
+	/* Use rem or em */
 	display: flex;
-	padding: .2rem 1.5rem;
+	padding: 0.2rem 1.5rem;
 	background-color: #F4F4F6;
 	border-radius: 2.4rem;
 	justify-content: center;
-	align-items: baseline;
 	align-items: center;
-	transition: .3s;
+	transition: 0.3s;
 }
 
 .sortItem.selected {
@@ -39,14 +44,14 @@ body {
 }
 
 .sortItem img {
-	margin: 0 .5rem;
+	margin: 0 0.5rem;
 	width: 2rem;
 	height: 2rem;
 }
 
 .sortItem p {
 	white-space: nowrap;
-	padding: 0 .7rem 0 0;
+	padding: 0 0.7rem 0 0;
 }
 
 #text {
@@ -56,40 +61,60 @@ body {
 }
 
 #textContainer {
-	width: 1280px;
+	width: 100%;
+	max-width: 1280px;
 	display: flex;
 	justify-content: space-between;
 }
 
-#textContainer>h1 {
-	margin-left: 1rem;
+
+
+#sortChoose>p {
+	font-size: 1.625rem;
+	margin: 0;
+	margin-right: 1.25rem;
+	color: rgb(0, 0, 0);
+	font-family: Manrope;
+	font-weight: 500;
+	line-height: 130%;
+	letter-spacing: 0px;
+	text-align: left;
+
 }
 
-#textContainer>div {
+#sortChoose {
 	align-self: flex-end;
 	cursor: pointer;
-	align-items: baseline;
-	align-content: space-around;
+	align-items: center;
 	display: flex;
-	margin-right: 2.5rem;
+	margin-bottom: 2.5rem;
 }
 
-#textContainer>div>img {
+#sortChoose>img {
 	position: relative;
-	top: .4rem;
+	top: 0.4rem;
 	right: 10px;
 	padding: 1.5px 0;
+	width: 1.875rem;
+	height: 1.938rem;
+	left: 0%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	margin-right: 0.625rem;
 }
 
 #catalog {
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 1280px;
+	width: 100%;
+	max-width: 1280px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 }
+
 
 .catalogRow {
 	display: flex;
@@ -98,7 +123,8 @@ body {
 .catalogItem {
 	width: 30%;
 	flex-grow: 0;
-	margin: 1rem;
+	margin: 1.25rem;
+	margin-top: 0rem;
 	display: flex;
 	flex-direction: column;
 }
@@ -129,11 +155,7 @@ body {
 .catalogImg {
 	width: 100%;
 	border-radius: 15px 15px 0px 0px;
-	/* Закругляем только верхние углы */
 }
-
-/* ----------------------- */
-
 
 .catalogItemCircles {
 	top: -40px;
@@ -155,18 +177,12 @@ body {
 .catalogItemCircles div:nth-child(1) {
 	background-color: white;
 	margin-right: 10px;
-
 }
 
 .catalogItemCircles div:nth-child(2) {
 	border: 2px solid white;
 	margin-left: 10px;
-
 }
-
-
-/* ................ */
-
 
 .catalogInfo {
 	background: rgb(244, 244, 246);
@@ -174,14 +190,14 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	border-radius: 0px 0px 15px 15px;
-
 }
 
 .catalogInfo p:nth-child(2) {
 	position: relative;
 	color: rgb(0, 0, 0);
 	font-family: Manrope;
-	font-size: 21px;
+	font-size: 1.3125rem;
+	/* 21px */
 	font-weight: 500;
 	line-height: 130%;
 	letter-spacing: 0px;
@@ -191,13 +207,13 @@ body {
 	padding-right: 20px;
 	margin-top: 16px;
 	margin-bottom: 10px;
-
 }
 
 .catalogInfo p:nth-child(3) {
 	color: rgba(0, 0, 0, 0.5);
 	font-family: Manrope;
-	font-size: 18px;
+	font-size: 1.125rem;
+	/* 18px */
 	line-height: 130%;
 	letter-spacing: 0px;
 	text-align: right;
@@ -209,7 +225,8 @@ body {
 .catalogInfo p:nth-child(4) {
 	color: rgb(0, 0, 0);
 	font-family: Manrope;
-	font-size: 30px;
+	font-size: 1.875rem;
+	/* 30px */
 	font-weight: 500;
 	line-height: 130%;
 	letter-spacing: 0px;
@@ -218,80 +235,82 @@ body {
 	margin-top: 4px;
 	margin-right: 15px;
 	margin-bottom: 0px;
-
 }
 
 .catalogInfo a {
 	align-self: center;
 	border-radius: 1.8rem;
 	border: 1px solid black;
-	font-size: 1.4rem;
+	font-size: 1rem;
+	/* Use rem */
 	width: 100%;
 	text-align: center;
 	position: relative;
-
-
 	cursor: pointer;
+	transition: 0.4s;
+	background-color: black;
+	color: white;
 }
 
-
-
 .buy-button {
-	padding: 15px 30px 16px 30px;
-	margin: 20px;
+	padding: 0.9375rem 1.875rem;
+	/* 15px 30px */
+	margin: 1.25rem;
+	/* 20px */
 	background-color: #ffffff;
 	color: #000000;
 	border: none;
 	border-radius: 4px;
-	font-size: 16px;
+	font-size: 1.3125rem;
+	/* 21px */
 	cursor: pointer;
 	outline: none;
-	transition: .4s;
+	transition: 0.4s;
 	box-sizing: border-box;
 	border: 1px solid rgb(0, 0, 0);
 	border-radius: 50px;
 	font-family: Manrope;
-	font-size: 21px;
-	font-weight: 400;
-	line-height: 150%;
-	letter-spacing: 0px;
-	text-align: center;
 }
-
 
 .buy-button:hover {
 	background-color: black;
 	color: white;
 }
 
-
 #sortChooseBlock {
 	border-color: #000000;
 	z-index: 3;
-	/* поменять */
 	position: absolute;
-	width: 305px;
+	width: 19.0625rem;
+	/* 305px */
 	display: none;
 	flex-direction: column;
 	justify-content: center;
 	border-radius: 1.5rem;
 	text-align: center;
-	border-radius: 10px;
-
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
 	background: rgb(255, 255, 255);
-
+	padding: 1rem;
+	top: 140px;
+	left: 1000px;
 }
 
 #sortChooseBlock p {
 	color: rgb(0, 0, 0);
 	font-family: Manrope;
-	font-size: 21px;
+	/* 21px */
+	font-size: 1.3125rem;
+
 	font-weight: 400;
 	line-height: 130%;
 	letter-spacing: 0px;
 	margin-left: 24px;
+	margin-bottom: 1.5rem;
+	/* 24px */
+	margin-top: 0;
 }
+
+
 
 
 #sortChooseBlock a {
@@ -299,13 +318,12 @@ body {
 	border-radius: 1.8rem;
 	border: 1px solid black;
 	font-size: 1rem;
-	padding: .3rem 1rem;
+	padding: 0.3rem 1rem;
 	width: 50%;
 	text-align: center;
 	position: relative;
-	transition: .4s;
+	transition: 0.4s;
 	cursor: pointer;
-	margin-bottom: 0;
 	background-color: black;
 	color: white;
 }
@@ -314,68 +332,68 @@ body {
 	cursor: pointer;
 	margin: 0;
 	position: relative;
-	left: 32px;
+	left: 2rem;
+	/* 32px */
 	width: fit-content;
 	display: flex;
 	align-items: baseline;
+	/*  */
+
 }
 
 .option div {
 	display: flex;
-	top: .7rem;
+	top: 0.7rem;
 	border: 2px solid black;
 	width: .7rem;
 	height: .7rem;
 	border-radius: 2.5rem;
+
 }
 
-.option p {
-	font-size: 1rem;
-	margin-bottom: 24px;
-	margin-top: 0;
-}
 
 .choice_sorted_text {
-	padding: 28px 0px 20px 0px;
+	padding: 1.75rem 0 1.25rem;
+	/* 28px 0px 20px */
 }
 
 .choice_button {
 	margin-top: 0px;
-	padding: 13px 39px 14px 39px;
-	margin-left: 32;
-	margin-right: 32;
-	margin-bottom: 20px;
+	padding: 0.8125rem 2.4375rem;
+	/* 13px 39px */
+	margin-left: 2rem;
+	/* 32px */
+	margin-right: 2rem;
+	/* 32px */
+	margin-bottom: 1.25rem;
+	/* 20px */
 }
-
-#sortChoose p {
-	/* Desctop/Text1NormalMed */
-	color: rgb(0, 0, 0);
-	font-family: Manrope;
-	font-size: 26px;
-	font-weight: 500;
-	line-height: 130%;
-	letter-spacing: 0px;
-	text-align: left;
-}
-
-
-
 
 #textContainer h1 {
+	/* 46px */
+	font-size: 2.875rem;
+	margin-top: 2.5rem;
+	margin-bottom: 3.75rem;
+	margin-left: 1.3rem;
+
+
 	color: rgb(0, 0, 0);
 	font-family: Manrope;
-	font-size: 46px;
 	font-weight: 500;
 	line-height: 130%;
 	letter-spacing: 0px;
 	text-align: left;
 	text-transform: uppercase;
-	margin-left: 30px;
+
 }
 
-
-
 @media all and (max-width: 1256px) {
+
+	#sortChoose>img {
+		width: 1.6rem;
+		height: 1.7rem;
+	}
+
 	#catalog {
 		width: 90%;
 	}
@@ -391,19 +409,22 @@ body {
 	}
 
 	.catalogInfo p:nth-child(2) {
-		font-size: 1rem;
+		font-size: 1.125rem;
+		/* 18px */
 	}
 
 	.catalogInfo p:nth-child(3) {
 		font-size: 1rem;
+		/* 16px */
 	}
 
 	.catalogInfo p:nth-child(4) {
-		font-size: 1rem;
+		font-size: 1.5rem;
+		/* 24px */
 	}
 
 	#sort {
-		justify-content: flex-start;
+		justify-content: center;
 		overflow-x: scroll;
 	}
 
@@ -413,19 +434,335 @@ body {
 
 	.sortItem p {
 		padding: 0 0.3rem 0 0;
+		font-size: 1rem;
 	}
+
+	.sortItem img {
+		width: 1.55rem;
+		height: 1.55rem;
+	}
+
+	/* блок сортировки */
+
+	#sortChooseBlock {
+		width: 16rem;
+		/* 256px */
+		padding: 0.8rem;
+	}
+
+	#sortChooseBlock p {
+		/* 18px */
+		font-size: 1.125rem;
+		margin-bottom: 1.3rem;
+	}
+
+	#sortChooseBlock a {
+		font-size: 0.875rem;
+		/* 14px */
+		padding: 0.25rem 0.75rem;
+		width: 60%;
+	}
+
+	.option {
+		left: 1.5rem;
+		/* 24px */
+	}
+
+	.choice_button {
+		padding: 0.75rem 2rem;
+		margin-left: 1.5rem;
+		/* 24px */
+		margin-right: 1.5rem;
+		/* 24px */
+		margin-bottom: 1rem;
+		/* 16px */
+	}
+
+	/* кнопка */
+	.buy-button {
+		font-size: 1.125rem;
+		/* 18px */
+		padding: 0.675rem 1.35rem;
+		/* 10.8px 21.6px */
+	}
+
+	#textContainer h1 {
+		font-size: 2.6rem;
+		margin-left: 4rem;
+	}
+
+	/* вкладка сортировать */
+	#sortChoose>p {
+		font-size: 1.5rem;
+	}
+
 }
 
-@media all and (max-width: 789px) {
-	#catalog {
-		width: 100%;
+@media all and (max-width: 900px) {
+
+	#sortChoose>img {
+		width: 1.3rem;
+		height: 1.5rem;
+	}
+
+
+	.buy-button {
+		/* 18px */
+		font-size: 1rem;
+		/* 12px 24px */
+		padding: 0.75rem 1.5rem;
+
 	}
 
 	.catalogItem {
+		width: 45%;
+	}
+
+	.catalogInfo p:nth-child(2) {
+		/* 16px */
+		font-size: 1rem;
+	}
+
+	.catalogInfo p:nth-child(3) {
+		/* 14px */
+		font-size: 0.875rem;
+	}
+
+	.catalogInfo p:nth-child(4) {
+		/* 20px */
+		font-size: 1.25rem;
+	}
+
+	/* блок соритровки */
+	/* 224px */
+	#sortChooseBlock {
+		width: 14rem;
+		padding: 0.6rem;
+	}
+
+	#sortChooseBlock p {
+		/* 16px */
+		font-size: 1rem;
+		margin-bottom: 1.1rem;
+
+	}
+
+	#sortChooseBlock a {
+		/* 12px */
+		font-size: 0.75rem;
+		padding: 0.2rem 0.5rem;
+		width: 70%;
+	}
+
+	.option {
+		left: 1.25rem;
+		/* 20px */
+	}
+
+	.choice_button {
+		padding: 0.625rem 1.75rem;
+		margin-left: 1.25rem;
+		margin-right: 1.25rem;
+		margin-bottom: 0.75rem;
+	}
+
+	#textContainer h1 {
+		font-size: 2.2rem;
+		margin-left: 2.5rem;
+	}
+
+	/* вкладка сортировать */
+	#sortChoose>p {
+		font-size: 1.3rem;
+	}
+}
+
+@media all and (max-width: 768px) {
+
+	#sortChoose>img {
+		width: 1.1rem;
+		height: 1.3rem;
+	}
+
+	/* вкладка сортировать */
+	#sortChoose>p {
+		font-size: 1.2rem;
+	}
+
+	.buy-button {
+		padding: 0.875rem 1.5rem;
+	}
+
+	.catalogInfo p:nth-child(2) {
+		font-size: 0.875rem;
+
+	}
+
+	.catalogInfo p:nth-child(3) {
+		font-size: 0.75rem;
+	}
+
+	.catalogInfo p:nth-child(4) {
+		font-size: 1rem;
+	}
+
+	/* блок сортировки */
+	#sortChooseBlock {
+		/* 192px */
+		width: 12rem;
+		padding: 0.4rem;
+	}
+
+	#sortChooseBlock p {
+		font-size: 0.875rem;
+		margin-bottom: 1.1rem;
+	}
+
+	#sortChooseBlock a {
+		font-size: 0.5rem;
+		/* 8px */
+		padding: 0.1rem 0.3rem;
 		width: 90%;
 	}
 
-	.sortItem {
-		padding: 0.05rem 0.45rem;
+	.option {
+		left: 0.75rem;
+		/* 12px */
+	}
+
+	.choice_button {
+		padding: 0.4rem 1.25rem;
+		margin-left: 0.75rem;
+		/* 12px */
+		margin-right: 0.75rem;
+		/* 12px */
+		margin-bottom: 0.5rem;
+		/* 8px */
+	}
+
+
+}
+
+@media all and (max-width: 600px) {
+
+	/* вкладка сортировать */
+	#sortChoose>p {
+		font-size: 1rem;
+	}
+
+	.buy-button {
+		font-size: 1rem;
+		padding: 0.625rem 1.25rem;
+	}
+
+	.catalogItem {
+		width: 100%;
+	}
+
+
+
+	.catalogInfo p:nth-child(2) {
+		font-size: 1rem;
+		/* 16px */
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.catalogInfo p:nth-child(3) {
+		font-size: 0.875rem;
+		/* 14px */
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	.catalogInfo p:nth-child(4) {
+		font-size: 1.25rem;
+		/* 20px */
+		padding-left: 12px;
+		padding-right: 12px;
+	}
+
+	/* блок соритровки */
+	#sortChooseBlock {
+		/* 160px */
+		width: 12rem;
+		padding: 0.2rem;
+	}
+
+	#sortChooseBlock p {
+		font-size: 0.75rem;
+		margin-bottom: 1rem;
+
+	}
+
+	#sortChooseBlock a {
+		font-size: 0.625rem;
+		/* 10px */
+		padding: 0.15rem 0.4rem;
+		width: 80%;
+	}
+
+	.option {
+		left: 1rem;
+		/* 16px */
+	}
+
+	.choice_button {
+		padding: 0.5rem 1.5rem;
+		margin-left: 1rem;
+		/* 16px */
+		margin-right: 1rem;
+		/* 16px */
+		margin-bottom: 0.625rem;
+		/* 10px */
+	}
+
+
+
+	#textContainer h1 {
+		font-size: 2rem;
+		margin-left: 2.4rem;
+	}
+}
+
+
+
+@media all and (max-width: 480px) {
+
+	#sortChooseBlock p {
+		font-size: 0.8rem;
+	}
+
+	#sortChooseBlock a {
+		font-size: 0.75rem;
+		/* 12px */
+		padding: 0.2rem 0.5rem;
+		width: 70%;
+	}
+
+	.option {
+		left: 1rem;
+		/* 16px */
+	}
+
+	.choice_button {
+		padding: 0.625rem 1.5rem;
+		/* 10px 24px */
+		margin-left: 1rem;
+		/* 16px */
+		margin-right: 1rem;
+		/* 16px */
+		margin-bottom: 0.75rem;
+		/* 12px */
+	}
+
+	.buy-button {
+		font-size: 0.875rem;
+		padding: 0.525rem 1.05rem;
+	}
+
+	#textContainer h1 {
+		font-size: 1.8rem;
+		margin-left: 1.5rem;
 	}
 }
